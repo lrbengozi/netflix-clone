@@ -66,6 +66,24 @@ const Tmdb = {
       },
     ]
   },
+  getMovieInfo: async (movieId: string, type: string) => {
+    let info = {}
+
+    if (movieId) {
+      switch (type) {
+        case 'movie':
+          info = await getFetch(`/movie/${movieId}?language=pt-br`)
+          break
+        case 'tv':
+          info = await getFetch(`/tv/${movieId}?language=pt-br`)
+          break
+        default:
+          break
+      }
+    }
+
+    return info
+  },
 }
 
 export default Tmdb
