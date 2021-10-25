@@ -58,6 +58,16 @@ const App = () => {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+        Página desenvolvida por{' '}
+        <a href="https://www.linkedin.com/in/lrbengozi/">
+          Luiz Rogério Bengozi
+        </a>{' '}
+        para portifólio de projetos. <br />
+        Direitos de imagem para a Netflix <br />
+        Dados pegos no site Themoviedb.org <br />
+      </footer>
     </div>
   )
 }
