@@ -15,6 +15,8 @@ const Watch = () => {
     const loadAll = async () => {
       const key = await Tmdb.getTrailer(id, type)
 
+      console.log(`YouTubeKey=${youTubeKey}`)
+
       setYouTubeKey(key)
     }
 
