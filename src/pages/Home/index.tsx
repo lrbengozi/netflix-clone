@@ -57,9 +57,18 @@ const Home = () => {
       {featuredData && <FeaturedMovie item={featuredData} />}
 
       <section className="lists">
-        {movieList.map((item, key) => (
-          <MovieRow key={key} title={item.title} items={item.items} />
-        ))}
+        {movieList.map((item, key) => {
+          let type = 'movie'
+          if (item.slug === 'originals') type = 'tv'
+          return (
+            <MovieRow
+              key={key}
+              title={item.title}
+              items={item.items}
+              type={type}
+            />
+          )
+        })}
       </section>
 
       <footer>

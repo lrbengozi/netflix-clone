@@ -7,9 +7,10 @@ import NavigateBefore from '@material-ui/icons/NavigateBefore'
 interface MovieRowProps {
   title: string
   items: any
+  type: string
 }
 
-const MovieRow: React.ElementType<MovieRowProps> = ({ title, items }) => {
+const MovieRow: React.ElementType<MovieRowProps> = ({ title, items, type }) => {
   const [scrollx, setscrollx] = useState(0)
 
   const handleLeftArrow = () => {
@@ -50,7 +51,7 @@ const MovieRow: React.ElementType<MovieRowProps> = ({ title, items }) => {
           {items.results.length > 0 &&
             items.results.map((item: any, key: any) => (
               <div key={key} className="movieRow--item">
-                <a href={`/watch/${item.id}`}>
+                <a href={`/watch/${type}/${item.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
                     alt={item.title}

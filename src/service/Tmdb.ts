@@ -84,6 +84,33 @@ const Tmdb = {
 
     return info
   },
+  getTrailer: async (movieId: string, type: string) => {
+    let info = {
+      results: [
+        {
+          site: 'YouTube',
+          key: '',
+        },
+      ],
+    }
+
+    if (movieId) {
+      switch (type) {
+        case 'movie':
+          info = await getFetch(`/movie/${movieId}/videos`)
+          break
+        case 'tv':
+          info = await getFetch(`/tv/${movieId}/videos`)
+          break
+        default:
+          break
+      }
+    }
+
+    const results = info.results.filter((i) => i.site === 'YouTube' && i.key)
+
+    return `https://www.youtube.com/watch?v=${results[results.length - 1].key}`
+  },
 }
 
 export default Tmdb

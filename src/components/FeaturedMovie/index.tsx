@@ -38,7 +38,7 @@ const FeaturedMovie: React.ElementType<FeaturedMovieProps> = ({ item }) => {
           </div>
           <div className="featured--description">{description}</div>
           <div className="featured--buttons">
-            <a href={`/watch/${item.id}`} className="featured--watchbutton">
+            <a href={`/watch/tv/${item.id}`} className="featured--watchbutton">
               ▶ Assistir
             </a>
             <a href={`/add/${item.id}`} className="featured--mylistbutton">
