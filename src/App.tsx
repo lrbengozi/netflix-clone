@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Tmdb, { getHomeListResponse } from './service/Tmdb'
 
+import LinkedIn from '@material-ui/icons/LinkedIn'
+
 import MovieRow from './components/MovieRow'
 import FeaturedMovie from './components/FeaturedMovie'
 import Header from './components/Header'
@@ -61,12 +63,15 @@ const App = () => {
 
       <footer>
         Página desenvolvida por{' '}
-        <a href="https://www.linkedin.com/in/lrbengozi/">
+        <a href="https://www.linkedin.com/in/lrbengozi/" target="blank">
           Luiz Rogério Bengozi
         </a>{' '}
         para portifólio de projetos. <br />
         Direitos de imagem para a Netflix <br />
         Dados pegos no site Themoviedb.org <br />
+        <a href="https://www.linkedin.com/in/lrbengozi/" target="blank">
+          <LinkedIn style={{ fontSize: 35 }} />
+        </a>
       </footer>
     </div>
   )
