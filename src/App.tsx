@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Tmdb, { getHomeListResponse } from './service/Tmdb'
 
 import LinkedIn from '@material-ui/icons/LinkedIn'
+import { CircularProgress } from '@material-ui/core'
 
 import MovieRow from './components/MovieRow'
 import FeaturedMovie from './components/FeaturedMovie'
@@ -73,6 +74,12 @@ const App = () => {
           <LinkedIn style={{ fontSize: 35 }} />
         </a>
       </footer>
+
+      {movieList.length <= 0 && (
+        <div className="loading">
+          <CircularProgress size="120px" />
+        </div>
+      )}
     </div>
   )
 }
