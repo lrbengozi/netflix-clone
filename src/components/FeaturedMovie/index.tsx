@@ -11,7 +11,10 @@ const FeaturedMovie: React.ElementType<FeaturedMovieProps> = ({ item }) => {
     return genre.name
   })
 
-  console.log(genres)
+  let description = item.overview
+  if (description.length > 300) {
+    description = `${description.substring(0, 300)}...`
+  }
 
   return (
     <section
@@ -33,7 +36,7 @@ const FeaturedMovie: React.ElementType<FeaturedMovieProps> = ({ item }) => {
               {item.number_of_seasons !== 1 ? 's' : ''}
             </div>
           </div>
-          <div className="featured--description">{item.overview}</div>
+          <div className="featured--description">{description}</div>
           <div className="featured--buttons">
             <a href={`/watch/${item.id}`} className="featured--watchbutton">
               ▶ Assistir
