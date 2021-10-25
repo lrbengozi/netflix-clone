@@ -50,10 +50,12 @@ const MovieRow: React.ElementType<MovieRowProps> = ({ title, items }) => {
           {items.results.length > 0 &&
             items.results.map((item: any, key: any) => (
               <div key={key} className="movieRow--item">
-                <img
-                  src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
-                  alt={item.title}
-                />
+                <a href={`/watch/${item.id}`}>
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
+                    alt={item.title}
+                  />
+                </a>
               </div>
             ))}
         </div>
