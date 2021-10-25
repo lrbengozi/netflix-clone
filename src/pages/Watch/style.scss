@@ -1,0 +1,12 @@
+.youtube {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+  overflow: hidden;
+
+  .youtube--player {
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+  }
+}

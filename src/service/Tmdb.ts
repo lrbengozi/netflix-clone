@@ -90,6 +90,7 @@ const Tmdb = {
         {
           site: 'YouTube',
           key: '',
+          type: 'Trailer',
         },
       ],
     }
@@ -107,9 +108,11 @@ const Tmdb = {
       }
     }
 
-    const results = info.results.filter((i) => i.site === 'YouTube' && i.key)
+    const results = info.results.filter(
+      (i) => i.site === 'YouTube' && i.type === 'Trailer' && i.key
+    )
 
-    return `https://www.youtube.com/watch?v=${results[results.length - 1].key}`
+    return results[results.length - 1].key
   },
 }
 
