@@ -10,7 +10,7 @@ interface MovieRowProps {
 }
 
 const MovieRow: React.ElementType<MovieRowProps> = ({ title, items }) => {
-  const [scrollx, setscrollx] = useState(-400)
+  const [scrollx, setscrollx] = useState(0)
 
   const handleLeftArrow = () => {
     let x = scrollx + Math.round(window.innerWidth / 2)
