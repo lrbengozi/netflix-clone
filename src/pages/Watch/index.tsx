@@ -21,7 +21,7 @@ const Watch = () => {
     }
 
     loadAll()
-  }, [])
+  }, [id, type, youTubeKey])
 
   return (
     <div className="youtube">
